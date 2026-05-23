@@ -1,0 +1,22 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "users": {
+      "$uid": {
+        ".read": "auth != null",
+        // Allow creating/modifying own profile, but restrict role modification to system administrators
+        ".write": "auth != null && auth.uid == $uid && (!data.exists() || !newData.hasChild('role') || data.child('role').val() == newData.child('role').val())"
+      }
+    },
+    "patients": {
+      ".indexOn": ["deviceId", "status"]
+    },
+    "devices": {
+      ".indexOn": ["assignedPatientId"]
+    },
+    "alerts": {
+      ".indexOn": ["patientId", "status"]
+    }
+  }
+}
