@@ -44,10 +44,10 @@ cp .env.example .env
 Fill in your Firebase credentials in `.env`:
 ```env
 VITE_FIREBASE_API_KEY=your_actual_api_key
-VITE_FIREBASE_AUTH_DOMAIN=mamaalert-e93f6.firebaseapp.com
-VITE_FIREBASE_DATABASE_URL=https://mamaalert-e93f6-default-rtdb.firebaseio.com
-VITE_FIREBASE_PROJECT_ID=mamaalert-e93f6
-VITE_FIREBASE_STORAGE_BUCKET=mamaalert-e93f6.firebasestorage.app
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+VITE_FIREBASE_DATABASE_URL=https://your_project_id-default-rtdb.firebaseio.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project_id.firebasestorage.app
 ```
 *(Note: If left with default placeholders, the application automatically launches in **Local Demo Mode**, which utilizes a local mock storage driver to let judges run the entire application offline.)*
 
@@ -92,7 +92,7 @@ Bedside ESP32 units with MAX30102 sensors and battery systems publish telemetry 
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 
-#define FIREBASE_HOST "mamaalert-e93f6-default-rtdb.firebaseio.com"
+#define FIREBASE_HOST "your_project_id-default-rtdb.firebaseio.com"
 #define FIREBASE_AUTH "your_database_secret_or_token"
 #define DEVICE_ID "ESP32_01"
 
